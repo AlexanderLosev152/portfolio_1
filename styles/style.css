@@ -87,7 +87,7 @@ section {
   align-items: center;
   padding: 0 9%;
   background: url("") no-repeat;
-  background-size: cover;
+  background-size: coptain;
   background-position: center;
 }
 
@@ -115,6 +115,54 @@ section {
   font-weight: 700;
   color: transparent;
   -webkit-text-stroke: 0.7px var(--main-color);
+  background: linear-gradient(var(--main-color), var(--main-color)) no-repeat;
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: homeBgText 6s linear infinite;
+  animation-delay: 2s;
+}
+
+.text-animate h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 2px solid var(--main-color);
+  z-index: -1;
+  animation: homeCursorText 6s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes homeBgText {
+  0%,
+  10%,
+  100% {
+    background-position: -33rem 0;
+  }
+  65%,
+  85% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes homeCursorText {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  65%,
+  78%,
+  85% {
+    width: 100%;
+    opacity: 1;
+  }
+  75%,
+  81% {
+    opacity: 0;
+  }
 }
 
 .home-content p {
@@ -277,7 +325,8 @@ section {
 }
 
 .about-img img {
-  width: 90%;
+  width: 70%;
+  padding: 0 rem;
   border-radius: 50%;
   border: 0.2rem solid var(--main-color);
 }
@@ -661,7 +710,6 @@ section {
 /* ==================== */
 /* ==================== */
 
-
 /* breakpoints */
 
 @media (max-width: 1200px) {
@@ -723,14 +771,13 @@ section {
     height: 100%;
     background: var(--bg-color);
     z-index: -1;
-    transition: .25s ease;
+    transition: 0.25s ease;
     transition-delay: 0s;
   }
 
-  .navbar.active .active-nav  {
+  .navbar.active .active-nav {
     left: 0;
     transition-delay: 0s;
-
   }
 
   .navbar a {
@@ -738,13 +785,13 @@ section {
     font-size: 2rem;
     margin: 3rem 0;
     transform: translateX(-20rem);
-    transition-delay: .25s;
+    transition-delay: 0.25s;
     transition-delay: 0s;
   }
 
   .navbar.active a {
     transform: translateX(0);
-    transition-delay: .25s;
+    transition-delay: 0.25s;
   }
 }
 
@@ -767,6 +814,7 @@ section {
 
   .footer p {
     margin-top: 2rem;
+    text-align: center;
   }
 }
 

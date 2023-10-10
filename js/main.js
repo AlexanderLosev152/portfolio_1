@@ -30,4 +30,4 @@ window.onscroll = () => {
   let header = document.querySelector(".header");
   header.classList.toggle("sticky", window.scrollY > 100);
 };
-// 1:12:28 / 2:07:11
+// 1:29:14 / 2:07:11
